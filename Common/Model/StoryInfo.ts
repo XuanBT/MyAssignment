@@ -4,3 +4,10 @@ export type NewStoryInfo = {
     title: string
     score: string
 }
+
+export type CommentInfo = {
+    id: number
+    text: string
+    by: string
+    time: number
+}

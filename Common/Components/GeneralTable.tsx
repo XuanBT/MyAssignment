@@ -53,9 +53,16 @@ export const GeneralTable = (props: GeneralTableProps) => {
                         <DataTable.Cell
                           key={`columnItem_${subIndex}`}
                           style={{width: columnItem.minWidth}}>
-                          <Text numberOfLines={2}>
-                            {dataItem[columnItem.fieldName]}
-                          </Text>
+                          {columnItem.render ? (
+                            columnItem.render({
+                              index: index,
+                              selectItem: dataItem,
+                            })
+                          ) : (
+                            <Text numberOfLines={2}>
+                              {dataItem[columnItem.fieldName]}
+                            </Text>
+                          )}
                         </DataTable.Cell>
                       );
                     })}

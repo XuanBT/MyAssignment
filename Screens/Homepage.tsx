@@ -16,13 +16,13 @@ export const Homepage = (
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate('NewStoriesScreen')}>
+          onPress={() => props.navigation.navigate('BestStoriesScreen')}>
           <View style={storyStyle.buttonContent}>
             <Text style={storyStyle.buttonText}>Best Stories</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate('NewStoriesScreen')}>
+          onPress={() => props.navigation.navigate('TopStoriesScreen')}>
           <View style={storyStyle.buttonContent}>
             <Text style={storyStyle.buttonText}>Top Stories</Text>
           </View>

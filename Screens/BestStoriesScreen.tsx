@@ -14,7 +14,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import { MainStackParamList } from './Navigation/MainStackParamList';
 import { StackScreenProps } from '@react-navigation/stack';
 
-export const NewStoriesScreen = (props: StackScreenProps<MainStackParamList,"NewStoriesScreen">) => {
+export const BestStoriesScreen = (props: StackScreenProps<MainStackParamList,"BestStoriesScreen">) => {
   const isFocused = useIsFocused();
   const [newStoryList, setNewStoryList] = React.useState<Array<NewStoryInfo>>(
     [],
@@ -47,9 +47,8 @@ export const NewStoriesScreen = (props: StackScreenProps<MainStackParamList,"New
     {label: 'Score', fieldName: 'score', minWidth: 80},
   ];
   React.useEffect(() => {
-    // if (isFocused) {
       pipe(
-        StoryService.getNewStoryIDList(),
+        StoryService.getBestStoryIDList(),
         ZIO.map(responseData => {
           setStoryIDList(responseData);
           setTotalRecord(responseData.length);
@@ -58,7 +57,6 @@ export const NewStoriesScreen = (props: StackScreenProps<MainStackParamList,"New
         }),
         ZIO.unsafeRun({}),
       );
-    // }
   }, []);
 
   React.useEffect(() => {
@@ -102,7 +100,7 @@ export const NewStoriesScreen = (props: StackScreenProps<MainStackParamList,"New
   return (
     <View style={storyStyle.container}>
       <View style={storyStyle.headerContent}>
-        <Text style={storyStyle.headerTitle}>New story list</Text>
+        <Text style={storyStyle.headerTitle}>Best story list</Text>
       </View>
       <GeneralTable
         columns={displayedColumns}
