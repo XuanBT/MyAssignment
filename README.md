@@ -16,7 +16,7 @@ After clone source sucessfully, You should do many follow steps to run app on IO
 
 2 Set up to run the project on Android
   Installing requirements:
-   - install Node(v16.15.0 or higher), React native CLI, JDK(v11 or higher), Android studio, Android 12(S)SDK (include: SDK Platform 31, Intel x86 Atom_64 System Image)on your Macbook or you window laptop
+   - install Node(v16.15.0 or higher), React native CLI, JDK(v11 or higher), Android studio, Android 13(S)SDK (include: SDK Platform 33, Intel x86 Atom_64 System Image)on your Macbook or you window laptop
   After installed requirements, you add follow environment variables to ~/.zprofile or ~/.zshrc file
    + Set enviroment variable for JDK
      - You add command line like export JAVA_HOME=<your JDK installation location> to  ~/.zshrc file
