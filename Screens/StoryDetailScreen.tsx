@@ -72,8 +72,10 @@ export const StoryDetailScreen = (
             responseData.kids.length > 0
           ) {
             setCommentIDList(responseData.kids);
+            setTotalRecord(responseData.kids.length);
           } else {
             setCommentIDList([]);
+            setTotalRecord(0);
           }
           return responseData;
         }),
@@ -109,9 +111,9 @@ export const StoryDetailScreen = (
         setCommentInfoList(
           responseData.map(item => ({
             id: item.id,
-            text: item.text,
+            text: item.text || '',
             time: item.time,
-            by: item.by,
+            by: item.by || '',
           })),
         );
         // console.log('responseData:', JSON.stringify(responseData));
@@ -153,23 +155,25 @@ export const StoryDetailScreen = (
           <View style={storyStyle.headerContent}>
             <Text style={storyStyle.headerTitle}>Comment List</Text>
           </View>
-          <GeneralTable
-            columns={displayedColumns}
-            dataSource={commentInfoList}
-            isPagination={true}
-            pageNum={pageNum}
-            totalRecord={totalRecord}
-            pageSize={pageSize}
-            onPageChange={(pageNo: number, pageS: number) => {
-              getNewCommentList(pageNo, pageSize);
-            }}
-            onItemsPerPageChange={(pageNo: number, pageS: number) => {
-              if (totalRecord <= (pageNum + 1) * pageS) {
-                getNewCommentList(0, pageS);
-              } else {
-                getNewCommentList(pageNum, pageS);
-              }
-            }}></GeneralTable>
+          <View style={storyStyle.listContainer}>
+              <GeneralTable
+                columns={displayedColumns}
+                dataSource={commentInfoList}
+                isPagination={true}
+                pageNum={pageNum}
+                totalRecord={totalRecord}
+                pageSize={pageSize}
+                onPageChange={(pageNo: number, pageS: number) => {
+                  getNewCommentList(pageNo, pageSize);
+                }}
+                onItemsPerPageChange={(pageNo: number, pageS: number) => {
+                  if (totalRecord <= (pageNum + 1) * pageS) {
+                    getNewCommentList(0, pageS);
+                  } else {
+                    getNewCommentList(pageNum, pageS);
+                  }
+                }}></GeneralTable>
+          </View>
         </>
       )}
     </ScrollView>
@@ -178,9 +182,19 @@ export const StoryDetailScreen = (
 
 const storyStyle = StyleSheet.create({
   container: {
-    display: 'flex',
+    // display: 'flex',
+    flex: 1,
     backgroundColor: '#fff',
-    marginBottom: 50,
+    // marginBottom: 50,
+  },
+  listContainer: {
+    // display: 'flex',
+    // flexDirection: 'row',
+    // flexWrap: 'wrap',
+    width: "100%",
+    height: '100%',
+    // backgroundColor: '#0f0',
+    // marginBottom: 50,
   },
   blockContainer: {
     marginTop: 20,

@@ -98,7 +98,7 @@ export const GeneralTable = (props: GeneralTableProps) => {
 };
 const tableStyles = StyleSheet.create({
   container: {
-    maxHeight: 500,
+    height: 500,
   },
   tableContainer: {
     borderWidth: 1,

@@ -18,9 +18,9 @@ export namespace StoryService {
 
   export const CommentDetailInfo = t.type({
     id: t.number,
-    text: t.string,
+    text: Maybe(t.string),
     time: t.number,
-    by: t.string
+    by: Maybe(t.string)
   })
 
   export type StoryDetailInfo = t.TypeOf<typeof StoryDetailInfo>
