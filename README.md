@@ -1,4 +1,5 @@
 MyAssignment
+
 You use git to clone source code with Reposity Url with command line like: git clone https://github.com/XuanBT/MyAssignment.git
 After clone source sucessfully, You should do many follow steps to run app on IOS(Simulator) or Android(emulator)
 1 Set up to run the Project on IOS
