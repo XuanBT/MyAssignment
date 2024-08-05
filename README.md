@@ -25,7 +25,7 @@ After clone source sucessfully, You should do many follow steps to run app on IO
      - You add command line like export JAVA_HOME=<--your JDK installation location--> to  ~/.zshrc file
    + Set enviroment variable for Android studio
      - You add below command lines to ~/.zshrc file :
-       export ANDROID_HOME=$HOME<--your android studio location-->
+       export ANDROID_HOME=$HOME<--your android studio installation location-->
        export PATH=$PATH:$ANDROID_HOME/emulator
        export PATH=$PATH:$ANDROID_HOME/platform-tools
   
