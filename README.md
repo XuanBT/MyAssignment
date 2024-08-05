@@ -30,5 +30,5 @@ After clone source sucessfully, You should do many follow steps to run app on IO
        export PATH=$PATH:$ANDROID_HOME/platform-tools
   
   After set up environment variables successfully, you run below commands
-    - cd <Project folder>
+    - cd <Project directory>
     - npm run android or yarn android
