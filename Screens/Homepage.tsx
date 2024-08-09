@@ -1,16 +1,22 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, NativeModules} from 'react-native';
 import {MainStackParamList} from './Navigation/MainStackParamList';
 
 export const Homepage = (
   props: StackScreenProps<MainStackParamList, 'Homepage'>,
 ) => {
+  const calendarItem = NativeModules.CalendarModule
+  // console.log('CalendarModule1:')
+
   return (
     <View style={storyStyle.container}>
       <View style={storyStyle.buttonContainer}>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate('NewStoriesScreen')}>
+          onPress={() => {
+            console.log('CalendarModule:', calendarItem.createCalendarEvent('testName', 'testLocation'))
+            props.navigation.navigate('NewStoriesScreen')
+            }}>
           <View style={storyStyle.buttonContent}>
             <Text style={storyStyle.buttonText}>New Stories</Text>
           </View>

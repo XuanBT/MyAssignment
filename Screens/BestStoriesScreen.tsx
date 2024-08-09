@@ -1,7 +1,7 @@
 import {useIsFocused} from '@react-navigation/native';
 import {pipe} from 'fp-ts/lib/function';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {NativeModules, StyleSheet, Text, View} from 'react-native';
 import {
   GeneralTable,
   NewStoryInfo,
